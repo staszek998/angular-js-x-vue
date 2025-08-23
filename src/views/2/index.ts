@@ -1,13 +1,14 @@
+import { initializeVueComponent } from './vue.ts'
+
 angular.module('app.views.2', ['ngRoute']).config([
   '$routeProvider', function ($routeProvider: angular.route.IRouteProvider) {
     $routeProvider.when('/view/2', {
       template: `
-        <div>
+        <div class="view">
           <h1>
             View 2 (persistent state)
           </h1>
-          <br>
-          TODO: Here we will render the Vue app.
+          <div class="island --vue" id="vue"></div>
         </div>
       `,
       controller: 'view-2:controller'
@@ -15,5 +16,6 @@ angular.module('app.views.2', ['ngRoute']).config([
   }
 ]).controller('view-2:controller', [
   function () {
+    initializeVueComponent()
   }
 ])
