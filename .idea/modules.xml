@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/angular-js-vite.iml" filepath="$PROJECT_DIR$/.idea/angular-js-vite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/angular-js-x-vue.iml" filepath="$PROJECT_DIR$/.idea/angular-js-x-vue.iml" />
     </modules>
   </component>
 </project>

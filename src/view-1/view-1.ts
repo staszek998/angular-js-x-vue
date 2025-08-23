@@ -1,8 +1,8 @@
 import { createApp, ref } from 'vue'
 
-angular.module('myApp.view1', ['ngRoute']).config([
+angular.module('app.view-1', ['ngRoute']).config([
   '$routeProvider', function ($routeProvider: angular.route.IRouteProvider) {
-    $routeProvider.when('/view1', {
+    $routeProvider.when('/view-1', {
       template: `
         <div>
           <h1>View 1 (non-persistent state)</h1>
@@ -10,10 +10,10 @@ angular.module('myApp.view1', ['ngRoute']).config([
           <div class="island --vue" id="vue"></div>
         </div>
       `,
-      controller: 'View1Ctrl'
+      controller: 'view-1:controller'
     })
   }
-]).controller('View1Ctrl', [
+]).controller('view-1:controller', [
   function () {
     createApp({
       setup () {

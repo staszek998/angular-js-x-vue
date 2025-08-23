@@ -5,23 +5,22 @@ import 'angular-route'
 
 import './styles.css'
 
-import './view1/view1.ts'
-import './view2/view2.ts'
+import './view-1/view-1.ts'
+import './view-2/view-2.ts'
 
-// Declare app level module which depends on views, and core components
-angular.module('myApp', [
+angular.module('app', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2'
+  'app.view-1',
+  'app.view-2'
 ]).config([
   '$locationProvider', '$routeProvider', function (
     $locationProvider: angular.ILocationProvider,
     $routeProvider: angular.route.IRouteProvider
   ) {
     $locationProvider.hashPrefix('!')
-    $routeProvider.otherwise({ redirectTo: '/view1' })
+    $routeProvider.otherwise({ redirectTo: '/view-1' })
   }
 ])
 
-angular.bootstrap(document, ['myApp'])
+angular.bootstrap(document, ['app'])
 
