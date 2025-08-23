@@ -1,6 +1,7 @@
 'use strict';
 
 import angular from 'angular';
+import 'angular-route'; // make sure angular-route augments angular
 
 // Declare app level module which depends on views, and core components
 angular.module('myApp', [
@@ -8,9 +9,11 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version'
-]).config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+]).config(['$locationProvider', '$routeProvider', function(
+  $locationProvider: angular.ILocationProvider,
+  $routeProvider: angular.route.IRouteProvider
+) {
   $locationProvider.hashPrefix('!');
-
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 

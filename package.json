@@ -1,18 +1,20 @@
 {
   "name": "angular-js-vite",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
+    "dev": "vite",
     "preview": "vite preview"
   },
   "dependencies": {
-    "angular": "latest"
+    "angular": "1.8.3",
+    "angular-route": "1.8.3"
   },
   "devDependencies": {
     "@types/angular": "latest",
+    "@types/angular-route": "latest",
     "eslint": "^9.34.0",
     "eslint-plugin-perfectionist": "^4.15.0",
     "typescript": "latest",
