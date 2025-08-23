@@ -1,6 +1,15 @@
 {
   "name": "angular-js-x-vue",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:staszek998/angular-js-x-vue.git"
+  },
+  "author": {
+    "name": "IDEALIGN Stanisław Gregor",
+    "email": "stanislaw.gregor@idealign.zgora.pl",
+    "url": "https://idealign.zgora.pl"
+  },
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
