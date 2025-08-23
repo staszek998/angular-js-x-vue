@@ -1,0 +1,21 @@
+{
+  "name": "angular-js-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "angular": "latest"
+  },
+  "devDependencies": {
+    "@types/angular": "latest",
+    "eslint": "^9.34.0",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "typescript": "latest",
+    "vite": "latest"
+  }
+}
