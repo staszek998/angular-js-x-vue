@@ -5,20 +5,20 @@ import 'angular-route'
 
 import './styles.css'
 
-import './view-1/view-1.ts'
-import './view-2/view-2.ts'
+import './views/1'
+import './views/2'
 
 angular.module('app', [
   'ngRoute',
-  'app.view-1',
-  'app.view-2'
+  'app.views.1',
+  'app.views.2'
 ]).config([
   '$locationProvider', '$routeProvider', function (
     $locationProvider: angular.ILocationProvider,
     $routeProvider: angular.route.IRouteProvider
   ) {
     $locationProvider.hashPrefix('!')
-    $routeProvider.otherwise({ redirectTo: '/view-1' })
+    $routeProvider.otherwise({ redirectTo: '/view/1' })
   }
 ])
 

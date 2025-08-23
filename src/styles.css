@@ -70,6 +70,7 @@ footer {
   &.--angular {
     --background: rgb(from var(--color-angular-red) r g b / 10%);
     --border-color: var(--color-angular-red);
+    display: grid;
 
     &::before {
       content: "Angular JS";
@@ -95,4 +96,19 @@ footer {
   justify-content: space-evenly;
   gap: 1em;
   width: 100%;
+}
+
+.view {
+  /* display: grid; */
+  /* grid-template-rows: auto minmax(0, 1fr); */
+  /* grid-template-columns: minmax(0, 1fr); */
+  /* grid-template-areas: */
+  /*   "angular" */
+  /*   "vue"; */
+  display: flex;
+  flex-direction: column;
+
+  .island.--vue {
+    flex: 1;
+  }
 }

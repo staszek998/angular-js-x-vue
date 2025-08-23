@@ -1,6 +1,6 @@
-angular.module('app.view-2', ['ngRoute']).config([
+angular.module('app.views.2', ['ngRoute']).config([
   '$routeProvider', function ($routeProvider: angular.route.IRouteProvider) {
-    $routeProvider.when('/view-2', {
+    $routeProvider.when('/view/2', {
       template: `
         <div>
           <h1>
