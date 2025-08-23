@@ -1,6 +1,7 @@
 {
   "name": "angular-js-x-vue",
   "private": true,
+  "description": "A PoC of mixing the latest Vue version with legacy Angular JS.",
   "repository": {
     "type": "git",
     "url": "git@github.com:staszek998/angular-js-x-vue.git"
