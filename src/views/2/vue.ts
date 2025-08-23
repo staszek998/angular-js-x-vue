@@ -1,12 +1,16 @@
 import { useStorage } from '@vueuse/core'
 import { createApp, type Ref } from 'vue'
 
+import { CounterControls } from '../../components/CounterControls'
+
 const INITIAL_COUNT: number = 0
 
 export const initializeVueComponent = (): void => {
   createApp({
+    components: { CounterControls },
+
     setup () {
-      const count: Ref<number> = useStorage('app.views.2.count', INITIAL_COUNT);
+      const count: Ref<number> = useStorage('app.views.2.count', INITIAL_COUNT)
 
       const incrementCount = (): void => {
         count.value = count.value + 1
@@ -27,16 +31,12 @@ export const initializeVueComponent = (): void => {
         <br><br>
         <em>
           Notice that when this view will load for the first time, the counter will show its initial value
-          ({{ INITIAL_COUNT }}), but <strong>with every subsequent (re)render, it will <u>maintain</u> its previous state</strong>.
+          ({{ INITIAL_COUNT }}), but <strong>with every subsequent (re)render, it will
+          <u>maintain</u> its previous state</strong>.
         </em>
       </p>
 
-      <p>
-        <strong>Current count is: {{ count }}</strong>
-        <br><br>
-        <button @click="decrementCount" title="Decrement the counter">-</button>
-        <button @click="incrementCount" title="Increment the counter">+</button>
-      </p>
+      <CounterControls v-bind="{ count }" @decrement-count="decrementCount" @increment-count="incrementCount" />
     `
   }).mount('#vue')
 }

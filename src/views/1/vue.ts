@@ -1,9 +1,13 @@
 import { createApp, type Ref, ref } from 'vue'
 
+import { CounterControls } from '../../components/CounterControls'
+
 const INITIAL_COUNT: number = 0
 
 export const initializeVueComponent = (): void => {
   createApp({
+    components: { CounterControls },
+
     setup () {
       const count: Ref<number> = ref(INITIAL_COUNT)
 
@@ -25,17 +29,13 @@ export const initializeVueComponent = (): void => {
         It only renders a simple counter, with increment/decrement controls.
         <br><br>
         <em>
-          Notice that <strong>when you'll change the view currently rendered by Angular, you'll <u>loose</u> the current state of the counter</strong>.
+          Notice that <strong>when you'll change the view currently rendered by Angular, you'll
+          <u>loose</u> the current state of the counter</strong>.
           Every time this view is rendered, it will show the same, initial count ({{ INITIAL_COUNT }}).
         </em>
       </p>
 
-      <p>
-        <strong>Current count is: {{ count }}</strong>
-        <br><br>
-        <button @click="decrementCount" title="Decrement the counter">-</button>
-        <button @click="incrementCount" title="Increment the counter">+</button>
-      </p>
+      <CounterControls v-bind="{ count }" @decrement-count="decrementCount" @increment-count="incrementCount" />
     `
   }).mount('#vue')
 }
