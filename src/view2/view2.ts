@@ -3,7 +3,9 @@ angular.module('myApp.view2', ['ngRoute']).config([
     $routeProvider.when('/view2', {
       template: `
         <div>
-          <code>view2</code> (this part is rendered by Angular)
+          <h1>
+            <code>view2</code> <small>(this part is being rendered by Angular)</small>
+          </h1>
           <br>
           TODO: Here we will render the Vue app.
         </div>
