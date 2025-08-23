@@ -1,17 +1,17 @@
-angular.module('myApp.view1', ['ngRoute']).config([
+angular.module('myApp.view2', ['ngRoute']).config([
   '$routeProvider', function ($routeProvider: angular.route.IRouteProvider) {
-    $routeProvider.when('/view1', {
+    $routeProvider.when('/view2', {
       template: `
         <div>
-          <code>view1</code> (this part is rendered by Angular)
+          <code>view2</code> (this part is rendered by Angular)
           <br>
           TODO: Here we will render the Vue app.
         </div>
       `,
-      controller: 'View1Ctrl'
+      controller: 'View2Ctrl'
     })
   }
-]).controller('View1Ctrl', [
+]).controller('View2Ctrl', [
   function () {
   }
 ])
