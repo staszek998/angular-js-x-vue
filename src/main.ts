@@ -3,7 +3,7 @@
 import 'angular'
 import 'angular-route'
 
-import './styles.css'
+import './styles/index.css'
 
 import './views/1'
 import './views/2'

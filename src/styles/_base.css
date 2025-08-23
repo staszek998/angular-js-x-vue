@@ -1,0 +1,55 @@
+/*noinspection CssUnknownTarget*/
+@import url("normalize.css");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  --spacing: 1rem;
+
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  padding: var(--spacing);
+  grid-gap: var(--spacing);
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5ch;
+  flex-wrap: wrap;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1em;
+  }
+}
