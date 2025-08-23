@@ -1,21 +1,27 @@
-'use strict';
+'use strict'
 
-import angular from 'angular';
-import 'angular-route'; // make sure angular-route augments angular
+import 'angular'
+import 'angular-route'
+
+import './view1/view1.ts'
 
 // Declare app level module which depends on views, and core components
 angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).config(['$locationProvider', '$routeProvider', function(
-  $locationProvider: angular.ILocationProvider,
-  $routeProvider: angular.route.IRouteProvider
-) {
-  $locationProvider.hashPrefix('!');
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+  // 'myApp.view2',
+  // 'myApp.version'
+]).config([
+  '$locationProvider', '$routeProvider', function (
+    $locationProvider: angular.ILocationProvider,
+    $routeProvider: angular.route.IRouteProvider
+  ) {
+    $locationProvider.hashPrefix('!')
+    $routeProvider.otherwise({ redirectTo: '/view1' })
+  }
+])
+
+angular.bootstrap(document, ['myApp'])
 
 // import './style.css'
 // import typescriptLogo from './typescript.svg'
