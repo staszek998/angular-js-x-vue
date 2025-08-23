@@ -1,3 +1,5 @@
+<!--suppress HtmlUnknownTarget, HtmlUnknownAnchorTarget -->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,16 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
-  
+
   <body>
-    <ul class="menu">
-      <li><a href="#!/view1">view1</a></li>
-      <li><a href="#!/view2">view2</a></li>
-    </ul>
-    
-    <div ng-view></div>
-    
-    <!-- Internal -->
+    <header class="island --static">
+      <nav>
+        <ul>
+          <li><a href="#!/view1">View 1 - non-persistent state</a></li>
+          <li><a href="#!/view2">View 2 - persistent state</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--suppress HtmlUnknownAttribute -->
+    <main class="island --angular" ng-view></main>
+
+    <footer class="island --static">Created by <a href="https://idealign.zgora.pl" target="_blank">IDEALIGN
+      Stanisław
+      Gregor</a></footer>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

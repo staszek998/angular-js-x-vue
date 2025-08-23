@@ -1,0 +1,87 @@
+/*noinspection CssUnknownTarget*/
+@import url("normalize.css");
+
+:root {
+  --color-angular-red: #c3002f;
+  --color-gray: #afafaf;
+  --color-vue-green: #41b883;
+  --spacing: 1rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  padding: var(--spacing);
+  grid-gap: var(--spacing);
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.island {
+  position: relative;
+  padding: 1em;
+
+  &, &::before {
+    background: var(--background);
+    border: 0.2rem dashed var(--border-color);
+    border-radius: 0.5rem;
+  }
+
+  &::before {
+    position: absolute;
+    top: -0.1em;
+    right: 2em;
+    padding: 0.5em 0.75em;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &.--static {
+    --background: rgb(from var(--color-gray) r g b / 25%);
+    --border-color: var(--color-gray);
+
+    &::before {
+      content: "Static HTML";
+    }
+  }
+
+  &.--angular {
+    --background: rgb(from var(--color-angular-red) r g b / 10%);
+    --border-color: var(--color-angular-red);
+
+    &::before {
+      content: "Angular JS";
+    }
+  }
+
+  &.--vue {
+    --background: rgb(from var(--color-vue-green) r g b / 10%);
+    --border-color: var(--color-vue-green);
+
+    &::before {
+      content: "Vue 3";
+    }
+  }
+}
+

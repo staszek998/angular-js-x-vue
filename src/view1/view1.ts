@@ -5,11 +5,9 @@ angular.module('myApp.view1', ['ngRoute']).config([
     $routeProvider.when('/view1', {
       template: `
         <div>
-          <h1>
-            <code>view1</code> <small>(this part is being rendered by Angular)</small>
-          </h1>
+          <h1>View 1 (non-persistent state)</h1>
           <br>
-          <div id="vue" />
+          <div class="island --vue" id="vue"></div>
         </div>
       `,
       controller: 'View1Ctrl'

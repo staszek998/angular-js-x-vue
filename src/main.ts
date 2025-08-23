@@ -3,6 +3,8 @@
 import 'angular'
 import 'angular-route'
 
+import './styles.css'
+
 import './view1/view1.ts'
 import './view2/view2.ts'
 

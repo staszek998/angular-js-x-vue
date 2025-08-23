@@ -19,6 +19,7 @@
   "dependencies": {
     "angular": "1.8.3",
     "angular-route": "1.8.3",
+    "normalize.css": "^8.0.1",
     "vue": "latest"
   },
   "devDependencies": {
