@@ -29,8 +29,8 @@ export const initializeVueComponent = (): void => {
         It only renders a simple counter, with increment/decrement controls.
         <br><br>
         <em>
-          Notice that <strong>when you'll change the view currently rendered by Angular, you'll
-          <u>loose</u> the current state of the counter</strong>.
+          Notice that <strong>when you'll change the view currently rendered by Angular (or refresh the page),
+          you'll <u>loose</u> the current state of the counter</strong>.
           Every time this view is rendered, it will show the same, initial count&nbsp;({{ INITIAL_COUNT }}).
         </em>
       </p>
