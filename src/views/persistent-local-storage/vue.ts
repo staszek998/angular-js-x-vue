@@ -32,7 +32,7 @@ export const initializeVueComponent = (): void => {
         <em>
           Notice that when this view will load for the first time, the counter will show its initial value
           ({{ INITIAL_COUNT }}), but <strong>with every subsequent (re)render, it will
-          <u>maintain</u> its previous state</strong>.
+          <u>maintain</u> its previous state (even after refreshing the&nbsp;page!)</strong>.
           <!-- TODO: Add a note when the current state of the counter has been read from the local storage -->
         </em>
       </p>

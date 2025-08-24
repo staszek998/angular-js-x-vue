@@ -28,10 +28,9 @@ export const app = createApp({
       It only renders a simple counter, with increment/decrement controls.
       <br><br>
       <em>
-        This component is different from the previous one (persistent state - in local storage), in a way that
-        it keeps the Vue's state inside the JS' internal memory. It means that
+        This component keeps the Vue's state inside the JS' internal memory. It means that
         <strong>the state of the counter will be <u>kept intact</u> when switching between the particular Angular
-          views</strong>, and <strong>it will be <u>cleared</u> only when the page gets refreshed</strong>.
+          views</strong>, and <strong>it will be <u>cleared</u> only when the page gets&nbsp;refreshed</strong>.
       </em>
     </p>
 

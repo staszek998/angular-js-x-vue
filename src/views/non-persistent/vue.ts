@@ -31,7 +31,7 @@ export const initializeVueComponent = (): void => {
         <em>
           Notice that <strong>when you'll change the view currently rendered by Angular, you'll
           <u>loose</u> the current state of the counter</strong>.
-          Every time this view is rendered, it will show the same, initial count ({{ INITIAL_COUNT }}).
+          Every time this view is rendered, it will show the same, initial count&nbsp;({{ INITIAL_COUNT }}).
         </em>
       </p>
 

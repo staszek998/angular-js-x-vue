@@ -5,14 +5,14 @@ angular.module('app.views.non-persistent', ['ngRoute']).config([
     $routeProvider.when('/view/non-persistent', {
       template: `
         <div class="view">
-          <h1>View 1 (non-persistent state)</h1>
+          <h1>Non-persistent state</h1>
           <div class="island --vue" id="vue"></div>
         </div>
       `,
-      controller: 'view-1:controller'
+      controller: 'app.views.non-persistent.controller'
     })
   }
-]).controller('view-1:controller', [
+]).controller('app.views.non-persistent.controller', [
   function () {
     initializeVueComponent()
   }

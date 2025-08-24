@@ -5,11 +5,11 @@ app.mount(appContainer)
 
 angular.module('app.views.persistent:memory', ['ngRoute']).config([
   '$routeProvider', function ($routeProvider: angular.route.IRouteProvider) {
-    $routeProvider.when('/view/persistent-memory', {
+    $routeProvider.when('/view/persistent/memory', {
       template: `
         <div class="view">
           <h1>
-            View 3 (persistent state - in memory)
+            Persistent state - in memory
           </h1>
           <div class="island --vue" id="vue"></div>
         </div>
