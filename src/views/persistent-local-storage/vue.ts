@@ -1,26 +1,37 @@
 import { useStorage } from '@vueuse/core'
-import { createApp, type Ref } from 'vue'
+import { createApp, ref, type Ref } from 'vue'
 
 import { CounterControls } from '../../components/CounterControls'
 
-const INITIAL_COUNT: number = 0
+const INITIAL_COUNT: number = 0 as const
+const LOCAL_STORAGE_KEY: string = 'app.views.persistent:local-storage.count' as const
 
 export const initializeVueComponent = (): void => {
   createApp({
     components: { CounterControls },
 
     setup () {
-      const count: Ref<number> = useStorage('app.views.persistent:local-storage.count', INITIAL_COUNT)
+      const isCurrentValueFromLocalStorage: Ref<boolean> = ref(
+        window.localStorage.getItem(LOCAL_STORAGE_KEY) !== null
+      )
 
-      const incrementCount = (): void => {
+      const markAsDirty = (): void => {
+        isCurrentValueFromLocalStorage.value = false
+      }
+
+      const count: Ref<number> = useStorage(LOCAL_STORAGE_KEY, INITIAL_COUNT)
+
+      const onIncrementCount = (): void => {
         count.value = count.value + 1
+        markAsDirty()
       }
 
-      const decrementCount = (): void => {
+      const onDecrementCount = (): void => {
         count.value = count.value - 1
+        markAsDirty()
       }
 
-      return { count, INITIAL_COUNT, incrementCount, decrementCount }
+      return { count, INITIAL_COUNT, isCurrentValueFromLocalStorage, onIncrementCount, onDecrementCount }
     },
 
     template: `
@@ -33,11 +44,22 @@ export const initializeVueComponent = (): void => {
           Notice that when this view will load for the first time, the counter will show its initial value
           ({{ INITIAL_COUNT }}), but <strong>with every subsequent (re)render, it will
           <u>maintain</u> its previous state (even after refreshing the&nbsp;page!)</strong>.
-          <!-- TODO: Add a note when the current state of the counter has been read from the local storage -->
+          That's because the state of the counter is being kept in the browser's local storage
+          and when the component gets mounted, it reads the last saved value.
         </em>
       </p>
 
-      <CounterControls v-bind="{ count }" @decrement-count="decrementCount" @increment-count="incrementCount" />
+      <CounterControls
+          v-bind="{ count }"
+          @decrement-count="onDecrementCount"
+          @increment-count="onIncrementCount"
+      >
+        <template #after-count>
+          <span :style="{ textDecoration: isCurrentValueFromLocalStorage ? 'none' : 'line-through' }">
+            (read from local storage)
+          </span>
+        </template>
+      </CounterControls>
     `
   }).mount('#vue')
 }
