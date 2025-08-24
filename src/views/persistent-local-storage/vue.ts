@@ -10,7 +10,7 @@ export const initializeVueComponent = (): void => {
     components: { CounterControls },
 
     setup () {
-      const count: Ref<number> = useStorage('app.views.2.count', INITIAL_COUNT)
+      const count: Ref<number> = useStorage('app.views.persistent:local-storage.count', INITIAL_COUNT)
 
       const incrementCount = (): void => {
         count.value = count.value + 1
@@ -33,6 +33,7 @@ export const initializeVueComponent = (): void => {
           Notice that when this view will load for the first time, the counter will show its initial value
           ({{ INITIAL_COUNT }}), but <strong>with every subsequent (re)render, it will
           <u>maintain</u> its previous state</strong>.
+          <!-- TODO: Add a note when the current state of the counter has been read from the local storage -->
         </em>
       </p>
 
