@@ -22,7 +22,7 @@ export const app = createApp({
   },
 
   template: `
-    <p>
+    <p class="text-container">
       <strong>This part is rendered with Vue.</strong>
       <br><br>
       It only renders a simple counter, with increment/decrement controls.
